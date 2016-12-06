@@ -7,10 +7,10 @@
 <body>
 
 	<div id="game">
-		<img src="dragon.png">
+		<img name="dragon" src="dragon.png">
 		<div> You encountered a Dragon, Do you wish to Fight?</div>
 
-		<img name="hero" src="STANKY HERO PIC HERE"
+		<img name="hero" src="Chuck.png">
 
 	<img name="die1" src="d1.gif">
 	<img name="die2" src="d1.gif">
@@ -23,17 +23,24 @@
 	<script type="text/javascript">
 		function rollDice(){
 			
-			var randomDie1 = Math.ceil(Math.random() *6)
-			var randomDie2 = Math.ceil(Math.random() *6)
+var randomDie1 = Math.ceil(Math.random() *6)
+var randomDie2 = Math.ceil(Math.random() *6)
 
-			console.log(randomDie1)
-			console.log(randomDie2)
 
-			document.images.die1.src = "d" + randomDie1 + ".gif";
-			document.images.die2.src = "d" + randomDie2 + ".gif";
+console.log(randomDie1)
+console.log(randomDie2)
+
+document.images.die1.src = "d" + randomDie1 + ".gif";
+document.images.die2.src = "d" + randomDie2 + ".gif";
 	
-			document.getElementById('userRoll').innerHTML = randomDie1 + randomDie2
-		}
+document.getElementById('userRoll').innerHTML = randomDie1 + randomDie2
+		
+	if( randomDie1 + randomDie2 > 8){
+	document.images.dragon.src="http://i1.mirror.co.uk/incoming/article9188795.ece/ALTERNATES/s1200/Steven-Seagal.jpg"
+	}else{
+		document.images.hero.src="http://vignette2.wikia.nocookie.net/wikiality/images/5/51/Norris_beat_up.jpg/revision/latest/scale-to-width-down/200?cb=20070324203805"
+	}
+}
 
 
 	</script>
