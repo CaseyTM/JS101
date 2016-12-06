@@ -1,0 +1,44 @@
+<script type="text/javascript">
+
+//var student = {} ;// This is an object that has no defined properties.
+
+var student = []  // this is an array with no entities
+
+console.log(student.name);
+student.name = "Casey"
+student.age = 32
+student.gender = "male"
+console.log(student.name);
+
+var student2 = {
+	name: "Anna",
+	gender: "Female",
+	favoriteLanguage: "JS"
+}
+console.log(student2)
+
+var student3 = {
+	name: "Andy",
+	Languages: ["javascript" , "Python", "Node" , "GoLang"],
+	skillLevel: 
+			{ 	javascript: "Excellent", 
+				python: "Beginner",
+				node: "Warrior",
+				goLang: "Novice",
+			},
+	rightHanded: true,
+	sayHello: function(){
+		console.log("Hello, "+ this.name);
+	}
+}
+student3.name = "Snuffalufagus"
+console.log(student3.sayHello());
+var students = []
+students.push (student, student2, student3)
+console.log(student)
+
+for (var i = 0; i < student.length; i++){
+	console.log(students[i].name)
+}
+
+</script>
