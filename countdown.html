@@ -6,16 +6,49 @@
 <body>
 
 	<div id ="timer">      ---  </div>
+	<button onclick="pause()">Pause timer</button>
+	<button onclick="start()">Start timer</button>
 
 
 <script type="text/javascript">
 	
 	var now = Date.now()
-	console.log(now);
+	console.log(now / 1000);
+ 	var christmasDay = new Date ('December 25, 2016 00:00').getTime()
+ 	console.log(christmasDay / 1000);
+ 	var secondsTillChristmas = Math.floor((christmasDay - now) /1000);
+ 	console.log(secondsTillChristmas)
+ 	var minutesTillChristmas = secondsTillChristmas / 60;
+ 	console.log(minutesTillChristmas)
+ 	var hoursTillChristmas = minutesTillChristmas / 60;
+ 	console.log(hoursTillChristmas)
+ 	var daysTillChristmas = hoursTillChristmas/ 24;
+ 	console.log(daysTillChristmas)
+
+ 	var timerDiv = document.getElementById('timer');
+ 	timerDiv.innerHTML = secondsTillChristmas + "seconds till christmas!"
 
 
+ 	function updateCounter (){
+ 		// get the new timestamp, milliseconds since beginning of 1970
+ 		var now = Date.now();
+ 		var newSecondsTillChristmas = Math.floor((christmasDay - now) / 1000)
+ 		// console.log(newSecondsTillChristmas);
+ 		timerDiv.innerHTML = newSecondsTillChristmas + "seconds till christmas"
+ 	}
 
+function pause(){
+	clearInterval(counterInterval);
+}
+function start(){
+	counterInterval = setInterval(updateCounter, 10)
+}
+ 	// 1 update the counter each new second.
+ 	// 2 recalculate the new distance between now and then.
+ 	// 3 after recalculating, update the html with new number.
+ 	// setInterval(function to run, how often(in milliseconds))
 
+ 	var counterInterval;
 </script>
 
 

@@ -1,0 +1,28 @@
+<!-- Scope determines what can see a variable -->
+<!-- -Global -->
+<!-- -Local -->
+
+<!-- A parent passes all of its information down -->
+<!-- A child can see its parent, but not vice versa(child does not pass info up to parent) -->
+			<!-- Specifically referring to functions -->
+<script type="text/javascript">
+
+function child(a){
+	  a += 2;
+	  return a;
+	console.log("a's value inside the function is",a)
+}
+
+
+
+	var a = 2;
+	console.log("a's value outside the function is" + " " + a)
+	// if you dont use var in front of the variable, JS will assume this is global
+
+
+console.log(child(a))
+console.log("a's value outside the function is" + " " + a)
+
+
+
+</script>
